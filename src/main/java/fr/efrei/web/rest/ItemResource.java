@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping ("/api")
 public class ItemResource {
+    public final ItemService itemService;
+    public ItemRessource(ItemService itemservice) {this.itemService = ItemService;}
     @GetMapping ("/items")
     public String test(){
-        return "Hello World !";
-    }
+    public List <item> getALLItems() {return itemService.findAll();}
 }
