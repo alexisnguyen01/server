@@ -7,16 +7,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.ArrayList;
 
 @RestController
-@RequestMapping ("/api")
-    
+@RequestMapping("/api")
 public class ItemResource {
-    
-    public final ItemService itemService;
-    
-    public ItemRessource(ItemService itemservice) {this.itemService = itemService;}
-    
-    @GetMapping ("/items")
-    public List<item> getALLItems() {return itemService.findAll();}
+
+    @GetMapping("/items")
+    public String test(){
+        return "Hello World !";
+    }
+    public List<Item> getALLItems()}
+        return new ArrayList<>();
+
+    @GetMapping ("/items/{id}")
+        
+    public Item getItem(@PathVariable Integer id){
+        Item item = new Item();
+        item.setName ("Item 1");
+        return item;
+    }
 }
